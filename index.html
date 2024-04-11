@@ -43,9 +43,33 @@
                 'detailtext': detailtext
             };
             await addDoc(collection(db, "personalMiniProject"), doc);
-            alert('저장 완료!');
+            alert('저장완료');
             window.location.reload();
+
         })
+
+
+        let docs = await getDocs(collection(db, "personalMiniProject"));
+        docs.forEach((doc) => {
+            let row = doc.data();
+
+            let todotext = row['todotext'];
+            let detailtext = row['detailtext'];
+
+            let addTodo = `
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <button onclick="deleteBtn()" type="button" class="btn-close" aria-label="Close"></button>
+                            <h5 class="card-title">${todotext}</h5>
+                            <p class="card-text">${detailtext}</p>
+                        </div>
+
+                    </div>
+                </div>
+            `;
+            $('#sectionCards').append(addTodo);
+        });
 
         $("#allDeleteBtn").click(async function () {
             let msg = window.confirm('정말 삭제하겠습니까?');
@@ -167,45 +191,7 @@
                 <button id="allDeleteBtn" type="button" class="btn btn-danger">전부 삭제</button>
             </div>
             <div id="sectionCards" class="row row-cols-1 row-cols-md-3 g-4">
-                <div class="col">
-                    <div class="card">
-                        <div class="card-body">
-                            <button id="deleteBtn" type="button" class="btn-close" aria-label="Close"></button>
-                            <h5 class="card-title">코딩 공부하기</h5>
-                            <p class="card-text">4월 15일부터 오전 9시부터 오후 9시까지 공부</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <div class="card-body">
-                            <button id="deleteBtn" type="button" class="btn-close" aria-label="Close"></button>
-                            <h5 class="card-title">시간 맞춰서 식사하기</h5>
-                            <p class="card-text">아침은 8시에 먹고, 점심은 12시에 먹고, 저녁은 6시에 먹기</p>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <div class="card-body">
-                            <button id="deleteBtn" type="button" class="btn-close" aria-label="Close"></button>
-                            <h5 class="card-title">3</h5>
-                            <p class="card-text">3</p>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <div class="card-body">
-                            <button id="deleteBtn" type="button" class="btn-close" aria-label="Close"></button>
-                            <h5 class="card-title">4</h5>
-                            <p class="card-text">4</p>
-                        </div>
-
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div>
