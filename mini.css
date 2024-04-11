@@ -1,0 +1,48 @@
+        @import url('https://fonts.googleapis.com/css2?family=Dongle&family=Nanum+Pen+Script&display=swap');
+
+        * {
+            font-family: "Dongle", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 18px;
+        }
+
+        body {
+            background-image: url(https://cdn.discordapp.com/attachments/262272942417641495/1227612372345294929/image.png?ex=66290a1d&is=6616951d&hm=08e20dfab9ee1cd52bada3d70844900df72295228037fa53c6ce19684bc3fa15&);
+            background-repeat: no-repeat;
+            text-align: center;
+            background-size: cover;
+        }
+
+        Button {
+            margin-bottom: 20px;
+        }
+
+        .head {
+            color: black;
+        }
+
+        .head>div {
+            padding: 30px;
+            margin: 20px auto 20px auto;
+        }
+
+        .middle {
+            background-color: transparent;
+        }
+
+        .todobox {
+            width: 600px;
+            border: 2px solid white;
+            border-radius: 5px;
+        }
+
+        .todobox>div>button {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .todocards {
+            display: inline-flex;
+            justify-content: center;
+        }
