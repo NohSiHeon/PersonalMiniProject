@@ -21,14 +21,6 @@
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
 
-        const firebaseConfig = {
-            authDomain: "personalminiproject-3d3c0.firebaseapp.com",
-            projectId: "personalminiproject-3d3c0",
-            storageBucket: "personalminiproject-3d3c0.appspot.com",
-            messagingSenderId: "319894067053",
-            appId: "1:319894067053:web:84dc5f215707398abdec64",
-            measurementId: "G-H2PXQR18RX"
-        };
         $("#addBtn").click(async function () {
             let todotext = $('#todotext').val();
             let detailtext = $('#detailtext').val();
